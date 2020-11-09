@@ -391,7 +391,10 @@ module.exports = function(webpackEnv) {
             // our custom svgr handling of images and stuff ->
             {
               test: /\.svg$/,
-              include: path.resolve(paths.appSrc, '..', 'assets/svg/icons/'),
+              include: [
+                path.resolve(paths.appSrc, '..', 'assets/svg/icons/'),
+                path.resolve(paths.appSrc, '..', 'assets/svg/figma/'),
+              ],
               use: {
                 loader: '@svgr/webpack',
                 options: {
@@ -417,7 +420,10 @@ module.exports = function(webpackEnv) {
             {
               test: /\.svg$/,
               include: path.resolve(paths.appSrc, '..', 'assets/svg/'),
-              exclude: path.resolve(paths.appSrc, '..', 'assets/svg/icons/'),
+              exclude: [
+                path.resolve(paths.appSrc, '..', 'assets/svg/icons/'),
+                path.resolve(paths.appSrc, '..', 'assets/svg/figma/'),
+              ],
               use: {
                 loader: '@svgr/webpack',
                 options: {
