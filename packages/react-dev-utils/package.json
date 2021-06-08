@@ -1,10 +1,10 @@
 {
-  "name": "react-dev-utils",
-  "version": "11.0.4",
+  "name": "shopmonkey-react-dev-utils",
+  "version": "11.0.4-alpha.1",
   "description": "webpack utilities used by Create React App",
   "repository": {
     "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
+    "url": "https://github.com/gothy/create-react-app.git",
     "directory": "packages/react-dev-utils"
   },
   "license": "MIT",
@@ -71,7 +71,7 @@
     "open": "^7.0.2",
     "pkg-up": "3.1.0",
     "prompts": "2.4.0",
-    "react-error-overlay": "^6.0.9",
+    "react-error-overlay": "npm:shopmonkey-react-error-overlay@6.0.9-alpha.1",
     "recursive-readdir": "2.2.2",
     "shell-quote": "1.7.2",
     "strip-ansi": "6.0.0",

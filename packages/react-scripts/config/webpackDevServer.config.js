@@ -22,7 +22,7 @@ const sockHost = process.env.WDS_SOCKET_HOST;
 const sockPath = process.env.WDS_SOCKET_PATH; // default: '/ws'
 const sockPort = process.env.WDS_SOCKET_PORT;
 
-module.exports = function (proxy, allowedHost) {
+module.exports = function(proxy, allowedHost) {
   const disableFirewall =
     !proxy || process.env.DANGEROUSLY_DISABLE_HOST_CHECK === 'true';
   return {
@@ -70,8 +70,8 @@ module.exports = function (proxy, allowedHost) {
         // https://github.com/facebook/create-react-app/issues/293
         // src/node_modules is not ignored to support absolute imports
         // https://github.com/facebook/create-react-app/issues/1065
-        ignored: ignoredFiles(paths.appSrc),
-      },
+        ignored: ignoredFiles(paths.appSrc)
+      }
     },
     client: {
       // Enable custom sockjs pathname for websocket connection to hot reloading server.
@@ -84,14 +84,14 @@ module.exports = function (proxy, allowedHost) {
       needClientEntry: false,
       // Prevent a WS client from getting injected as we're already including
       // `webpackHotDevClient`.
-      needHotEntry: false,
+      needHotEntry: false
     },
     devMiddleware: {
       // It is important to tell WebpackDevServer to use the same "publicPath" path as
       // we specified in the webpack config. When homepage is '.', default to serving
       // from the root.
       // remove last slash so user can land on `/test` instead of `/test/`
-      publicPath: paths.publicUrlOrPath.slice(0, -1),
+      publicPath: paths.publicUrlOrPath.slice(0, -1)
     },
 
     https: getHttpsConfig(),
@@ -100,7 +100,7 @@ module.exports = function (proxy, allowedHost) {
       // Paths with dots should still use the history fallback.
       // See https://github.com/facebook/create-react-app/issues/387.
       disableDotRule: true,
-      index: paths.publicUrlOrPath,
+      index: paths.publicUrlOrPath
     },
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy,
@@ -127,6 +127,6 @@ module.exports = function (proxy, allowedHost) {
       // it used the same host and port.
       // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
       app.use(noopServiceWorkerMiddleware(paths.publicUrlOrPath));
-    },
+    }
   };
 };

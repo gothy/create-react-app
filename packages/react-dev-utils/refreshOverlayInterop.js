@@ -10,10 +10,10 @@
 
 const {
   dismissRuntimeErrors,
-  reportRuntimeError,
+  reportRuntimeError
 } = require('react-error-overlay');
 
 module.exports = {
   clearRuntimeErrors: dismissRuntimeErrors,
-  handleRuntimeError: reportRuntimeError,
+  handleRuntimeError: reportRuntimeError
 };
